@@ -1,0 +1,4 @@
+C:\Users\Kniffo\source\repos\ETWWorkerService\publish\appsettings.Development.json
+C:\Users\Kniffo\source\repos\ETWWorkerService\publish\appsettings.json
+C:\Users\Kniffo\source\repos\ETWWorkerService\publish\ETWWorkerService.pdb
+C:\Users\Kniffo\source\repos\ETWWorkerService\publish\ETWWorkerService.exe
