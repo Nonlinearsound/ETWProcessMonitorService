@@ -1,7 +1,7 @@
 # ETW-ProcessMonitor Service
 A tiny process monitor service, using Event Tracing for Windows that writes log files. 
 
-This is DotNET5 implementation of a Windows service that listens to process creation and termination events using the Event Traing System for Windows. As such, its timing is good but not real time. The application writes to a log file for further use.
+This is DotNET5 implementation of a Windows service (background process using a worker) that listens to process creation and termination events using the Event Traing System for Windows. As such, its timing is good but not real time. The application writes to a log file for further use.
 
 There ist the possibility for tracing Dll image load and unload events but at the moment it is not activated.
 
