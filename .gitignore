@@ -1,4 +1,7 @@
 ETWWorkerService/obj
+ETWWorkerService/obj/*
 ETWWorkerService/bin
+ETWWorkerService/bin/*
 publish
+publish/*
 .vscode
