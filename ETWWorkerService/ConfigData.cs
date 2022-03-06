@@ -79,15 +79,15 @@ namespace App.WindowsService
         public static string GetEmptyConfig()
         {
             Console.WriteLine("Generating example configuration");
-            Console.WriteLine("Please input EMail Password for nonlinearsound@outlook.com:");
+            Console.WriteLine("Please input EMail Password for EMail:");
             SecureString pwd = GetPassword();
             
             ConfigData data = new ConfigData
             {
                 Contacts = new Dictionary<string, EMailContact>
                 {
-                    ["nonlinearsound@icloud.com"] = new EMailContact { Address = "nonlinearsound@icloud.com", Name = "Carsten  Bruggmann", Provider = "icloud" },
-                    ["nonlinearsound@outlook.com"] = new EMailContact { Address = "nonlinearsound@outlook.com", Name = "Carsten  Bruggmann", Provider = "outlook" }
+                    ["me@there.com"] = new EMailContact { Address = "me@icloud.com", Name = "Charles Tester", Provider = "icloud" },
+                    ["me@there.com"] = new EMailContact { Address = "me@outlook.com", Name = "Charles Tester", Provider = "outlook" }
                 },
                 Providers = new Dictionary<string, EMailProvider>
                 {
@@ -97,7 +97,7 @@ namespace App.WindowsService
                         SMTPAddress = "smtp-mail.outlook.com",
                         SMTPPort = 587,
                         SMTPEncryptionMode = SMTPEncryptionMode.STARTLS,
-                        Username = "nonlinearsound@outlook.com",
+                        Username = "senditover@outlook.com",
                         Password = "hoschiboschi"
                     }
                 },
@@ -107,14 +107,14 @@ namespace App.WindowsService
                         EventPath = "Microsoft-Windows-Windows Defender/Operational", 
                         EventQuery = "*", 
                         Name = "Windows-Defender-Hazards", 
-                        EMailSubscribers = new List<string> { "nonlinearsound@outlook.com" }, 
+                        EMailSubscribers = new List<string> { "me@there.com" }, 
                         SlackChannel = new List<string> { "test" } 
                     },
                     new EventLog{
                         EventPath = "PowerShellCore/Operational",
                         EventQuery = "*",
                         Name = "PowershellCore",
-                        EMailSubscribers = new List<string> { "nonlinearsound@outlook.com" },
+                        EMailSubscribers = new List<string> { "me@there.com" },
                         SlackChannel = new List<string> { "test" }
                     }
                 }
