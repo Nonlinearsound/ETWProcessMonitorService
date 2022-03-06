@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "050ae870-1a44-44e5-bea9-ddd4beb452ee": {
+      "ProjectGuid": "050ae870-1a44-44e5-bea9-ddd4beb452ee",
+      "DisplayName": "ETWWorkerService",
+      "ColorIndex": 0
+    },
+    "cefc0699-9d61-4be7-94b8-07646fd212bb": {
+      "ProjectGuid": "cefc0699-9d61-4be7-94b8-07646fd212bb",
+      "DisplayName": "etwcli",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Sonstige Dateien",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}

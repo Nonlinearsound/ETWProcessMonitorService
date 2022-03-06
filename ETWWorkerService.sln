@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETWWorkerService", "ETWWorkerService\ETWWorkerService.csproj", "{050AE870-1A44-44E5-BEA9-DDD4BEB452EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ETWWorkerService", "ETWWorkerService\ETWWorkerService.csproj", "{050AE870-1A44-44E5-BEA9-DDD4BEB452EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "etwcli", "etwcli\etwcli.csproj", "{CEFC0699-9D61-4BE7-94B8-07646FD212BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{050AE870-1A44-44E5-BEA9-DDD4BEB452EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{050AE870-1A44-44E5-BEA9-DDD4BEB452EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{050AE870-1A44-44E5-BEA9-DDD4BEB452EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEFC0699-9D61-4BE7-94B8-07646FD212BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEFC0699-9D61-4BE7-94B8-07646FD212BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEFC0699-9D61-4BE7-94B8-07646FD212BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEFC0699-9D61-4BE7-94B8-07646FD212BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

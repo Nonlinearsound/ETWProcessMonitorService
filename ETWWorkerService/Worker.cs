@@ -28,13 +28,11 @@ namespace App.WindowsService
     public sealed class WindowsBackgroundService : BackgroundService
     {
         private IDictionary<int, ProcessInfo> dictProcesses;
-        private readonly JokeService _jokeService;
         private readonly ILogger<WindowsBackgroundService> _logger;
 
         public WindowsBackgroundService(
-            JokeService jokeService,
             ILogger<WindowsBackgroundService> logger) =>
-            (_jokeService, _logger) = (jokeService, logger);
+            (_logger) = (logger);
 
 
         private string CalcFileHash(string filePath)
@@ -118,7 +116,7 @@ namespace App.WindowsService
                             using (StreamWriter file = File.AppendText($"c:\\temp\\process_watch_{DateTime.Now.ToString("ddMMyyyy")}.log"))
                             {
                                 file.WriteLine(s);
-                            
+                                Console.WriteLine(s);
 
                                 if (e.ProcessName == "cmd")
                                 {
@@ -129,6 +127,7 @@ namespace App.WindowsService
                                         {
                                             s = $"{e.TimeStamp}.{e.TimeStamp.Millisecond:D3}:   [WARN] EXCEL executed a command processor!! This could be a trojan!!";
                                             file.WriteLine(s);
+                                            Console.WriteLine(s);
                                         }
                                     }
                                 }
@@ -152,6 +151,7 @@ namespace App.WindowsService
                             using (StreamWriter file = File.AppendText($"c:\\temp\\process_watch_{DateTime.Now.ToString("ddMMyyyy")}.log"))
                             {
                                 file.WriteLine(s);
+                                Console.WriteLine(s);
                             }
                         };
 
@@ -170,7 +170,7 @@ namespace App.WindowsService
                         */
 
                         await Task.Run(() => session.Source.Process());
-                        Thread.Sleep(TimeSpan.FromSeconds(60));
+                        Thread.Sleep(Timeout.Infinite);
                     }
                 }
                 catch (OperationCanceledException)
