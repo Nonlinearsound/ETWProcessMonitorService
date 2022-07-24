@@ -161,7 +161,7 @@ namespace App.WindowsService
                     new SlackChannel
                     {
                         Name = "RuegenCC-Hook",
-                        URL = "https://hooks.slack.com/services/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"
+                        URL = "https://hooks.slack.com/services/<KEY>"
                     }
                 }
             };
