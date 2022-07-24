@@ -1,0 +1,15 @@
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\bin\Release\etwcli.exe.config
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\bin\Release\etwcli.exe
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\bin\Release\etwcli.pdb
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\bin\Release\Newtonsoft.Json.dll
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\bin\Release\Newtonsoft.Json.xml
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\obj\Release\etwcli.csproj.AssemblyReference.cache
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\obj\Release\etwcli.csproj.SuggestedBindingRedirects.cache
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\obj\Release\etwcli.csproj.CoreCompileInputs.cache
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\obj\Release\etwcli.csproj.CopyComplete
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\obj\Release\etwcli.exe
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\obj\Release\etwcli.pdb
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\bin\Release\etwcli.exe.manifest
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\bin\Release\etwcli.application
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\obj\Release\etwcli.exe.manifest
+C:\Users\Kniffo\source\repos\ETWWorkerService\etwcli\obj\Release\etwcli.application

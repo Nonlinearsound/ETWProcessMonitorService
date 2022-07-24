@@ -12,9 +12,15 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Collections.Generic;
 using System.Xml;
+using Microsoft.CodeAnalysis.CSharp.Scripting;
 
 namespace App.WindowsService
 {
+    public class Params
+    {
+        public string input;
+    }
+
     class ProcessInfo
     {
         public int Id { get; set; }
@@ -48,6 +54,15 @@ namespace App.WindowsService
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            Params globals = new Params();
+            globals.input = "some lowercase text";
+
+            string script = "string TryUpper(string str) { return str.ToUpper(); } return TryUpper(input);";
+
+            string result = await CSharpScript.EvaluateAsync<string>(script, globals: globals);
+
+            Console.WriteLine(result);
+
             //dictProcesses = new Dictionary<int, ProcessInfo>();
             DateTime dtStart = DateTime.Now;
 

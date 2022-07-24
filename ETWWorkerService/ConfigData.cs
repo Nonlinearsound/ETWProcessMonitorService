@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security;
 using System.Text;
@@ -40,11 +41,18 @@ namespace App.WindowsService
         public IList<string> SlackChannel { get; set; }
     }
 
+    public class SlackChannel
+    {
+        public string Name { get; set; }
+        public string URL { get; set; }
+    }
+
     public class ConfigData
     {
         public IDictionary<string, EMailContact> Contacts { get; set; }
         public IDictionary<string, EMailProvider> Providers { get; set; }
         public IList<EventLog> EventLogs { get; set; }
+        public IList<SlackChannel> SlackChannels { get; set; }
     }
 
     public class ConfigurationHelper
@@ -76,7 +84,30 @@ namespace App.WindowsService
             return pwd;
         }
 
-        public static string GetEmptyConfig()
+        public static ConfigData GetConfigFromFile(string fileName)
+        {
+            string contents = File.ReadAllText(fileName);
+            ConfigData config = JsonSerializer.Deserialize<ConfigData>(contents);
+            return config;
+        }
+
+        public static bool WriteConfigToFile(ConfigData config, string fileName)
+        {
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string jsonString = JsonSerializer.Serialize(config, options);
+            try
+            {
+                File.WriteAllText(fileName, jsonString);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An eerror occurred while writing the config file for the ETWService. Reason: {0}", e.Message);
+                return false;
+            }
+            return true;
+        }
+
+        public static ConfigData GetEmptyConfig()
         {
             Console.WriteLine("Generating example configuration");
             Console.WriteLine("Please input EMail Password for EMail:");
@@ -108,22 +139,34 @@ namespace App.WindowsService
                         EventQuery = "*", 
                         Name = "Windows-Defender-Hazards", 
                         EMailSubscribers = new List<string> { "me@there.com" }, 
-                        SlackChannel = new List<string> { "test" } 
+                        SlackChannel = new List<string> { "RuegenCC-Hook" } 
                     },
                     new EventLog{
                         EventPath = "PowerShellCore/Operational",
                         EventQuery = "*",
                         Name = "PowershellCore",
                         EMailSubscribers = new List<string> { "me@there.com" },
-                        SlackChannel = new List<string> { "test" }
+                        SlackChannel = new List<string> { "RuegenCC-Hook" }
+                    },
+                    new EventLog{
+                        EventPath = "Microsoft-Windows-PrintService/Operational",
+                        EventQuery = "*[System/EventID=307]",
+                        Name = "Windows-PrintService",
+                        EMailSubscribers = new List<string> { "me@there.com" },
+                        SlackChannel = new List<string> { "RuegenCC-Hook" }
+                    }
+                },
+                SlackChannels = new List<SlackChannel>
+                {
+                    new SlackChannel
+                    {
+                        Name = "RuegenCC-Hook",
+                        URL = "https://hooks.slack.com/services/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"
                     }
                 }
             };
 
-            var options = new JsonSerializerOptions { WriteIndented = true };
-            string jsonString = JsonSerializer.Serialize(data, options);
-
-            return jsonString;
+            return data;
         }
     }
 }
