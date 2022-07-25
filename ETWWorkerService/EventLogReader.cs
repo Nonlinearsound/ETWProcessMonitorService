@@ -103,7 +103,7 @@ public class SlackPoster
 
     public async Task<HttpResponseMessage> SendMessageAsync(string sMessage)
     {
-        using (var request = new HttpRequestMessage(HttpMethod.Post, "https://hooks.slack.com/services/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"))
+        using (var request = new HttpRequestMessage(HttpMethod.Post, "<hook-url>"))
         {
             sMessage = sMessage.Replace("\\", "");
             string message = "{ 'text':'', 'blocks':[ {'type':'section','text':{'type':'mrkdwn','text':'"+ sMessage + "'}} ] }";
